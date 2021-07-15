@@ -25,7 +25,6 @@ let oneWayButton = document.querySelector('.triplinkOneWay');
 let twoWayButton = document.querySelector('.triplinkTwoWay');
 
 let returnDateBox = document.querySelector('#returnDateBox');
-let returnDateLabel = document.querySelector('#returnDateLabel');
 
 let returnCityText = document.querySelector('#returnCity');
 
@@ -34,11 +33,10 @@ let returnText = document.querySelector('#returnText')
 
 function oneWayTravel() {
   returnDateBox.style.display = 'none';
-  returnDateLabel.style.display = 'none'
   returnCityText.style.display = 'none'
   returnText.style.display = 'none'
 
-  oneWayButton.style.backgroundColor = 'royalBlue';
+  oneWayButton.style.backgroundColor = '#7C83FD';
   oneWayButton.style.color = 'white';
 
   twoWayButton.style.backgroundColor = 'white';
@@ -48,11 +46,9 @@ function oneWayTravel() {
 
 function twoWayTravel() {
   returnDateBox.style.display = 'block';
-  returnDateLabel.style.display = 'block'
   returnCityText.style.display = 'block'
   returnText.style.display = 'inline-block'
-
-  twoWayButton.style.backgroundColor = 'royalBlue';
+  twoWayButton.style.backgroundColor = '#7C83FD';
   twoWayButton.style.color = 'white';
 
   oneWayButton.style.backgroundColor = 'white'
@@ -151,6 +147,7 @@ function resultBox(ticketPrice) {
   let bookingButton = document.createElement('button');
   bookingButton.className = 'booking';
   bookingButton.innerText = "Book this Flight"
+  bookingButton.setAttribute('onclick','showModel()')
 
 
   //Main Div
@@ -213,6 +210,19 @@ function resultBox(ticketPrice) {
 
 }
 
+
+//Validation
+
+function validatation(originCity, destinationCity, departureDate, passengers) {
+  if(originCity == "" || null || destinationCity == "" || null ||
+     departureDate == null || passengers == "Passengers" || passengers < 1) {
+      return false;
+  } else {
+    return true
+  }
+
+}
+
 //Flight Search
 
 
@@ -228,11 +238,14 @@ searchButton.addEventListener('click', (e) => {
   let departureDate = document.querySelector('#departureDateBox').value;
   let returnDate = document.querySelector('#returnDateBox').value;
 
+  let passengers = document.querySelector('#passengersBox').value;
+
   console.log(departureDate)
   console.log(returnDate)
 
 
-  fetch(flightJson)
+  if(validatation(originCity, destinationCity, departureDate, passengers)) {
+    fetch(flightJson)
       .then(res => res.json())
       .then(data => {
         let boingsLen = data.boings.length;
@@ -251,8 +264,22 @@ searchButton.addEventListener('click', (e) => {
           }
         }
       });
+  } else {
+    alert('All the Fields are Required.')
+  }
 
 })
+
+
+//Model Controls
+
+function showModel() {
+  document.querySelector('.popUpModel').classList.add('showModel')
+}
+
+function closeModel() {
+  document.querySelector('.popUpModel').classList.remove('showModel')
+}
 
 
 

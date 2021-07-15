@@ -10,7 +10,7 @@
 <body>
 
   <!--TO DO
-      1. Get the Range value and round it out, pass it to search in flights.
+      
   -->
 
   <div>
@@ -31,34 +31,29 @@
 
         <div class="tab">
           <button class="triplinkOneWay" onclick="oneWayTravel()">One way</button>
-          <button style="background-color: royalblue; color: white;" class="triplinkTwoWay" onclick="twoWayTravel()">Return</button>
+          <button style="background-color: #7C83FD; color: white;" class="triplinkTwoWay" onclick="twoWayTravel()">Return</button>
         </div>
 
           <!--Forms-->
 
         <form onsubmit="return false">
-          <input for="originCity" id="originCity" placeholder="Enter Origin City" >
-          <input for="destinationCity" id="destinationCity" placeholder="Enter Destination City" >
+          <input for="originCity" id="originCity" placeholder="Enter Origin City" required>
+          <input for="destinationCity" id="destinationCity" placeholder="Enter Destination City" requried>
 
           <!--Departure Date-->
           
-          <label id="departDateLabel" for="departureDate">Departure Date</label>
-          <input type="date" id="departureDateBox" name="departure Date">
+          <input type="text" onfocus="(this.type = 'date')" id="departureDateBox" name="departure Date" placeholder="Departure Date" required>
           
 
           <!--Return Date-->
 
-          <label id="returnDateLabel" for="returnDate">Return Date</label>
-          <input type="date" id="returnDateBox" name="departure Date">
+          <input type="text" onfocus="(this.type = 'date')" id="returnDateBox" name="returnDate" placeholder="Return Date">
           
 
           <!--Passengers-->
 
-          <select id="passengersBox">
+          <select id="passengersBox" required>
             <option>Passengers</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
           </select>
 
           <!--Button-->
@@ -142,6 +137,20 @@
       </div>
 
     </div>
+
+
+    <!--Booking Model-->
+    <div class="popUpModel">
+      <div class="popUpBody">
+        <header>
+          <button class="closeButton" onclick="closeModel()">&times;</button>
+        </header>
+        <h3>Congratulation on Booking the Flight Ticket</h3>
+        <img src="./assets/partyPopper.png" alt="partyPopper">
+      </div>
+    </div>
+
+
   </div>
 
   <script src="scripts.js"></script>
