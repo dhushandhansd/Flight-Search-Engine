@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Search Flights</title>
+</head>
+<body>
+
+  <!--TO DO
+      1. Get the Range value and round it out, pass it to search in flights.
+  -->
+
+  <div>
+
+    <!--Header Section-->
+
+    <div class="header">
+      <p class="pageTitle">Flight Search Engine</h2>
+    </div>
+
+    <!--Left Section-->
+
+
+    <div class="leftContainer">
+      <div class="formContainer">
+
+          <!--Tabs Section-->
+
+        <div class="tab">
+          <button class="triplinkOneWay" onclick="oneWayTravel()">One way</button>
+          <button style="background-color: royalblue; color: white;" class="triplinkTwoWay" onclick="twoWayTravel()">Return</button>
+        </div>
+
+          <!--Forms-->
+
+        <form onsubmit="return false">
+          <input for="originCity" id="originCity" placeholder="Enter Origin City" >
+          <input for="destinationCity" id="destinationCity" placeholder="Enter Destination City" >
+
+          <!--Departure Date-->
+          
+          <label id="departDateLabel" for="departureDate">Departure Date</label>
+          <input type="date" id="departureDateBox" name="departure Date">
+          
+
+          <!--Return Date-->
+
+          <label id="returnDateLabel" for="returnDate">Return Date</label>
+          <input type="date" id="returnDateBox" name="departure Date">
+          
+
+          <!--Passengers-->
+
+          <select id="passengersBox">
+            <option>Passengers</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+
+          <!--Button-->
+
+          <button class="searchButton">Search</button>
+        </form>
+      </div>
+
+      <div class="rangeContainer">
+        <h4 class="rangeSliderTitle">Refine Flight Search</h4>
+
+        <!--Price Slider-->
+
+        <div class="slideContainer">
+          <input id="rangeSlider" type="range" 
+                 min="0" max="10000" value="1" 
+                 onchange="priceSlider(this.value)" class="slider">
+          <h4>Rs.<span id='price'>1</span></h4>
+        </div>
+      </div>
+
+    </div>
+
+    <!--Right Container-->
+
+    <div class="rightContainer">
+
+      <!--Details Pane-->
+
+      <div class="detailsContainer">
+        <!--Place-->
+
+        <div class="placeContainer">
+          <h3> 
+            <span id="fromCity">From</span> >
+            <span id="toCity">To</span> > <span id="returnCity">From</span>            
+          </h3>
+        </div>
+
+        <!--Date-->
+
+        <div class="dateContainer">
+          <p><strong>Depart : <span id="departDate">DATE</span></strong></p>
+          <p id="returnText"><strong>Return : <span id="returnDate">DATE</span></strong></p>
+        </div>
+      </div>
+
+      <!--Search Result-->
+
+      <div id="searchResult">
+        
+        <div class="emptyText">
+          <h3>Nothing to Display. Search for Flights..</h3>
+        </div>
+
+        <div class="model">
+          <!-- <div class="priceDetails">
+            <h2 class="priceTag">Rs.9.000.00</h2>
+          </div>
+          <div class="boingDetails">
+            <div class="fromDetails">
+              <p>AI-202</p>
+              <h3>PNQ > DEL</h3>
+              <h4>Depart : 10:00AM</h4>
+              <h4>Arrive : 12:00AM</h4>
+            </div>
+            <div class="toDetails">
+              <p>AI-202</p>
+              <h3>PNQ > DEL</h3>
+              <h4>Depart : 10:00AM</h4>
+              <h4>Arrive : 12:00AM</h4>
+            </div>
+            <div class="bookingDetails">
+              <button class="booking">
+                <strong>Book this Flight</strong>
+              </button>
+            </div>
+          </div>         -->
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

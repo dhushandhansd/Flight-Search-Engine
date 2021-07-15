@@ -1,0 +1,167 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, 'Segoe UI';
+}
+
+.header {
+  width: 100%;
+  background-color: royalblue;
+  color: white;
+}
+
+.pageTitle {
+  padding: 1%;
+}
+
+.leftContainer {
+  float: left;
+  width: 20%;
+  border-right: .5px solid #0000;
+  padding: 10px 10px;
+}
+
+.formContainer {
+  padding: 10px 10px;
+  background-color: rgba(82, 78, 78, 0.493);
+  border-radius: 4px;
+}
+
+.triplinkOneWay, .triplinkTwoWay {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 7px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  color: black;
+  background-color: white;
+}
+
+#originCity, #destinationCity {
+  width: min(100%, 230px);
+  height: 32px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+#departureDateBox, #returnDateBox, #passengersBox {
+  width: min(100%, 210px);
+  padding: 7px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  display: block;
+}
+
+#departDateLabel, #returnDateLabel {
+  display: flex;
+  font-size: 1vw;
+  display: block;
+}
+
+#returnText {
+  display: block;
+}
+
+.searchButton {
+  width: min(100%, 70px);
+  padding: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: royalblue;
+  color: white;
+}
+
+.rangeContainer {
+  color:black ;
+  margin-top: 20px;
+  padding: 10px 10px;
+  background-color: rgba(82, 78, 78, 0.493);
+  border-radius: 4px;
+}
+
+.rangeSliderTitle {
+  font-size: 1vw;
+}
+
+.slider {
+  margin: 10px;
+  width: min(100%, 190px);
+}
+
+.rightContainer {
+  float: right;
+  width: 80%;
+  padding: 10px;
+}
+
+.emptyText {
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.detailsContainer {
+  width: 100%;
+  height: min(20%, 100px);
+  background-color: rgba(82, 78, 78, 0.493);;
+  color:black;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+.placeContainer {
+  display: inline-block;
+  width: min(70%, 700px);
+}
+
+.dateContainer {
+  display: inline-block;
+}
+
+#searchResult {
+  width: 100%;
+  color: white;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.model {
+  background-color: royalblue;
+  margin: 10px;
+  padding: 20px;
+  border: 0px;
+  border-radius: 4px;
+  display: none;
+}
+
+.priceTag {
+  font-size: 1.8vw;
+}
+
+.fromDetails, .toDetails, .bookingDetails {
+  display: inline-block;
+  padding: 10px;
+}
+
+.bookingDetails {
+  float: right;
+}
+
+.booking {
+  padding: 5px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  font-weight: bolder;
+  box-shadow: #0000 5px;
+}
